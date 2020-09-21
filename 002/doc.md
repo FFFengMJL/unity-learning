@@ -31,11 +31,11 @@
 
 因此该游戏资源架构如下：
 
-![游戏资源](./ttt_assets.png)
+![游戏资源](./img/ttt_assets.png)
 
 而三个场景中的游戏对象如下：
 
-![游戏对象](./ttt_sence.png)
+![游戏对象](./img/ttt_sence.png)
 
 其中 `SinglePlayerModeController` 和 `TwoPlayerController` 是 `GameController` 的子类，分别绑定着 SinglePlayerMode 和 TwoPlayerMode 的场景中的对应的 Controller 游戏对象，而 `HomeController` 类则是绑定了 Home 场景的 HomePage 对象
 
@@ -484,30 +484,30 @@ namespace TicTacToe.Mechanics
 
 单人模式：
 
-![单人模式](./SinglePlayerMode.gif)
+![单人模式](./img/SinglePlayerMode.gif)
 
 双人模式：
 
-![双人模式](./TwoPlayerMode.gif)
+![双人模式](./img/TwoPlayerMode.gif)
 
 主页：
-![主页](./HomePage.gif)
+![主页](./img/HomePage.gif)
 
 ## 使用说明
 
 ### 方法一：直接运行可执行文件
 
-下载 [可执行文件（压缩包 20.5MB）](./Tic-Tac-Toe%20exe.zip) ，解压之后直接点击 `Tic-Tac-Toe.exe` 运行
+下载 [可执行文件（压缩包 20.5MB）](./zip/Tic-Tac-Toe%20exe.zip) ，解压之后直接点击 `Tic-Tac-Toe.exe` 运行
 
 ### 方法二：下载项目文件
 
-下载 [项目文件（压缩包 49.5M）](./Tic-Tac-Toe.zip) ，解压之后用 unity 打开
+下载 [项目文件（压缩包 49.5M）](./zip/Tic-Tac-Toe.zip) ，解压之后用 unity 打开
 
 ### 方法三：下载 Assets 文件
 
 > 本项目使用 unity 2019.4.9f1 版本（是 lts 版本）完成，对于2020的 unity 兼容性无法保证（因为没用过）
 
-下载 [资源文件（压缩包 18.4KB）](./Assets.zip) ，在 unity 中新建项目，使用解压后的 Assets 文件夹替换掉原来的 Assets 文件夹，将项目原本的 Scene 删除，将 Assets/Scenes 中的 Home 拖入 Hierarchy 栏中（如下图），之后运行游戏即可
+下载 [资源文件（压缩包 18.4KB）](./zip/Assets.zip) ，在 unity 中新建项目，使用解压后的 Assets 文件夹替换掉原来的 Assets 文件夹，将项目原本的 Scene 删除，将 Assets/Scenes 中的 Home 拖入 Hierarchy 栏中（如下图），之后运行游戏即可
 
-![怎么用 Assets](./HowToUseAssets.png)
+![怎么用 Assets](./img/HowToUseAssets.png)
 
