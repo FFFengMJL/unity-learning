@@ -3,11 +3,12 @@ using UnityEngine;
 
 namespace TicTacToe.Mechanics
 {
+  // 四种状态，分别代表：未着棋 | 平局 | 玩家1着棋 | 玩家2着棋
   public enum Player { Unfinished, Tie, First, Second };
 
   public class Basic
   {
-    // 游戏是否正在进行
+    // 用于判断游戏是否正在进行
     protected bool playing = true;
 
     // 用于判断是否是P1行动
@@ -22,6 +23,7 @@ namespace TicTacToe.Mechanics
       return playing;
     }
 
+    // 获取当前回合所属
     public bool GetTurn()
     {
       return turn;
@@ -33,12 +35,14 @@ namespace TicTacToe.Mechanics
       return history[i, j];
     }
 
+    // 着棋
     public void SetHistory(int i, int j)
     {
       history[i, j] = turn ? Player.First : Player.Second;
       turn = !turn;
     }
 
+    // 重置
     public void Reset()
     {
       playing = true;

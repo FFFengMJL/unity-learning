@@ -41,19 +41,19 @@ namespace TicTacToe.UI
       float buttonBaseX = width - buttonWidth / 2;
       float buttonBaseY = height - buttonHeight / 2;
 
-      // Render "Single Player" button.
+      // 单人模式 按钮
       if (GUI.Button(new Rect(buttonBaseX, buttonBaseY, buttonWidth, buttonHeight), "单人模式"))
       {
         SceneManager.LoadScene("SinglePlayerMode");
       }
 
-      // Render "Two Players" button.
+      // 双人模式 按钮
       if (GUI.Button(new Rect(buttonBaseX, buttonBaseY + buttonHeight + 10, buttonWidth, buttonHeight), "双人模式"))
       {
         SceneManager.LoadScene("TwoPlayerMode");
       }
 
-      // Render "Quit" button.
+      // 退出
       if (GUI.Button(new Rect(buttonBaseX, buttonBaseY + buttonHeight * 2 + 20, buttonWidth, buttonHeight), "退出"))
       {
 #if UNITY_EDITOR

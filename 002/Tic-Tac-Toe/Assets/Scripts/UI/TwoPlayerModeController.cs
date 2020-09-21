@@ -4,20 +4,20 @@ using UnityEngine;
 
 namespace TicTacToe.UI
 {
-    public class TwoPlayerModeController : GameController
+  public class TwoPlayerModeController : GameController
+  {
+    void Awake()
     {
-        void Awake()
-        {
-            // Initialize.
-            mechanics = new Mechanics.Basic();
-        }
-
-        public override void AfterRenderButton(int i, int j, Mechanics.Player player, bool isPressed)
-        {
-            if (mechanics.GetPlaying() && isPressed)
-            {
-                mechanics.SetHistory(i, j);
-            }
-        }
+      // Initialize.
+      mechanics = new Mechanics.Basic();
     }
+
+    public override void AfterRenderButton(int i, int j, Mechanics.Player player, bool isPressed)
+    {
+      if (mechanics.GetPlaying() && isPressed)
+      {
+        mechanics.SetHistory(i, j);
+      }
+    }
+  }
 }

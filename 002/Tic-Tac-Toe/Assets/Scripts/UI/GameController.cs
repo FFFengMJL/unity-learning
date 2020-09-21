@@ -13,24 +13,29 @@ namespace TicTacToe.UI
     // OnGUI is called when rendering and handling GUI events.
     void OnGUI()
     {
-      float width = Screen.width * 0.5f - 100;
-      float height = Screen.height * 0.5f - 50;
 
-      // 重置和回到主页按钮的属性
+      // 重置和回到主页按钮的长宽
       float buttonWidth = 100;
       float buttonHeight = 50;
 
+      // 棋盘单个按钮的长宽
+      int bHeight = 100;
+      int bWidth = 100;
+      int margin = 5;
+      float width = Screen.width * 0.5f - bHeight * 1.5f - margin;
+      float height = Screen.height * 0.5f - 100;
+
       // 回到主页 按钮
-      float buttonBaseX = width - buttonWidth / 2;
-      float buttonBaseY = height + buttonHeight * 2;
-      if (GUI.Button(new Rect(buttonBaseX - 100, buttonBaseY - 55, buttonWidth, buttonHeight), "回到主页"))
+      float buttonBaseX = Screen.width / 2;
+      float buttonBaseY = Screen.height / 2 + bHeight * 1.5f + margin * 3;
+      if (GUI.Button(new Rect(buttonBaseX - bWidth * 1.5f - margin, buttonBaseY, buttonWidth, buttonHeight), "回到主页"))
       {
         OnPressBackButton();
         return;
       }
 
       // 重置棋盘 按钮
-      if (GUI.Button(new Rect(buttonBaseX - 100, buttonBaseY, buttonWidth, buttonHeight), "重置棋盘"))
+      if (GUI.Button(new Rect(buttonBaseX + bWidth / 2 + margin, buttonBaseY, buttonWidth, buttonHeight), "重置棋盘"))
       {
         OnPressResetButton();
         return;
@@ -49,12 +54,16 @@ namespace TicTacToe.UI
         };
         messageStyle.normal.textColor = Color.red;
         // 展示结果
-        GUI.Label(new Rect(width + 50, height - 75 - 50, 100, 100), msg, messageStyle);
+        if (msg == "Tie!")
+        {
+          GUI.Label(new Rect(width + 135, height - 75 - 50, 100, 100), msg, messageStyle);
+        }
+        else
+        {
+          GUI.Label(new Rect(width + 50, height - 75 - 50, 100, 100), msg, messageStyle);
+        }
       }
 
-      // 生成棋盘
-      int bHeight = 100;
-      int bWidth = 100;
       for (int i = 0; i < 3; ++i)
       {
         for (int j = 0; j < 3; ++j)
@@ -74,7 +83,7 @@ namespace TicTacToe.UI
             token = "";
           }
           // 设置棋盘块的位置
-          var isPressed = GUI.Button(new Rect(width + i * bWidth + i * 5, height - 50 + j * bHeight + j * 5, bWidth, bHeight), token);
+          var isPressed = GUI.Button(new Rect(width + i * (bWidth + margin), height - 50 + j * (bHeight + margin), bWidth, bHeight), token);
           // 避免多次点击带来的错误
           if (player == Mechanics.Player.Unfinished)
           {
