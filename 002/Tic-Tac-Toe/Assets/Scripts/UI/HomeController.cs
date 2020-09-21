@@ -56,7 +56,11 @@ namespace TicTacToe.UI
       // Render "Quit" button.
       if (GUI.Button(new Rect(buttonBaseX, buttonBaseY + buttonHeight * 2 + 20, buttonWidth, buttonHeight), "退出"))
       {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
         Application.Quit();
+#endif
       }
     }
   }

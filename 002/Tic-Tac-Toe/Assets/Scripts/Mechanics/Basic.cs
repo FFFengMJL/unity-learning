@@ -10,7 +10,7 @@ namespace TicTacToe.Mechanics
     // 游戏是否正在进行
     protected bool playing = true;
 
-    // 是否是P1行动
+    // 用于判断是否是P1行动
     protected bool turn = true;
 
     // 储存的历史记录
@@ -27,6 +27,7 @@ namespace TicTacToe.Mechanics
       return turn;
     }
 
+    // 获取棋盘的位置
     public Player GetHistory(int i, int j)
     {
       return history[i, j];
@@ -60,6 +61,7 @@ namespace TicTacToe.Mechanics
           return history[i, 0];
         }
       }
+
       // 列是否已经达成条件
       for (int j = 0; j < 3; ++j)
       {
@@ -71,7 +73,8 @@ namespace TicTacToe.Mechanics
           return history[0, j];
         }
       }
-      // Cross-Line Check
+
+      // 斜线是否达成条件
       if (history[1, 1] != Player.Unfinished)
       {
         if (history[1, 1] == history[0, 0] && history[1, 1] == history[2, 2] ||
@@ -81,7 +84,8 @@ namespace TicTacToe.Mechanics
           return history[1, 1];
         }
       }
-      // Check if it is a tie.
+
+      // 判断是否平局
       var numOfUnfinished = 0;
       for (int i = 0; i < 3; ++i)
       {

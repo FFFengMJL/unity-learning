@@ -40,18 +40,19 @@ namespace TicTacToe.UI
       var winner = mechanics.CheckWin();
       if (winner != Mechanics.Player.Unfinished)
       {
-        string msg = winner == Mechanics.Player.First ? "Player1(X) Wins!" : winner == Mechanics.Player.Second ? "Player2(O) Wins!" : "Tie!";
+        string msg = winner == Mechanics.Player.First ? "Player1 (X) Wins!" :
+                                winner == Mechanics.Player.Second ? "Player2 (O) Wins!" : "Tie!";
         GUIStyle messageStyle = new GUIStyle
         {
           fontSize = 25,
-          fontStyle = FontStyle.Bold,
+          fontStyle = FontStyle.BoldAndItalic,
         };
         messageStyle.normal.textColor = Color.red;
-        // Show the results.
+        // 展示结果
         GUI.Label(new Rect(width + 50, height - 75 - 50, 100, 100), msg, messageStyle);
       }
 
-      // Render the map.
+      // 生成棋盘
       int bHeight = 100;
       int bWidth = 100;
       for (int i = 0; i < 3; ++i)
@@ -85,13 +86,13 @@ namespace TicTacToe.UI
 
     public abstract void AfterRenderButton(int i, int j, Mechanics.Player player, bool isPressed);
 
-    // It is called when "Back to Home" button is pressed.
+    // 回到主页
     void OnPressBackButton()
     {
       SceneManager.LoadScene("Home");
     }
 
-    // It is called when "Reset" button is pressed.
+    // 重置棋盘
     void OnPressResetButton()
     {
       mechanics.Reset();
