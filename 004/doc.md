@@ -384,7 +384,7 @@ namespace PriestsAndDevils
 ### 使用方法
 
 使用方法：
-1. 点击下载[PriestAndDevil 压缩包（140MB）](https://github.91chifun.workers.dev//https://github.com/FFFengMJL/unity-learning/releases/download/0.0.4/PriestAndDevil.zip)
+1. 点击下载[PriestAndDevil 压缩包（140MB）](https://github.91chifun.workers.dev//https://github.com/FFFengMJL/unity-learning/releases/download/0.0.4/PriestsAndDevils.zip)
 2. 在 unity 中新建一个空白项目
 3. 解压压缩包，打开 `PriestAndDevil` 文件夹，
 4. 将 `Assets` 文件夹替换掉原本项目中的 Assets 文件夹
